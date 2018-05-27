@@ -1,0 +1,22 @@
+.annuity-form label {
+  display: block;
+}
+
+.annuity-form input {
+  margin-left: 5px;
+}
+
+.transactions tbody {
+  display: block;
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.transactions thead {
+  width: 100%;
+  display: inline-table;
+}
+
+.transactions tr:nth-child(2n){
+  background: #eee;
+}
