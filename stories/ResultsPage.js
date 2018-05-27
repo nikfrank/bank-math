@@ -23,17 +23,12 @@ export default class ResultsPage extends Component {
       totalPayments,
     } = this.state;
 
-    const schedule =
-      paymentSchedule( amount, rate, paymentsPerYear, totalPayments )
-        .sort( (a, b)=> a.date > b.date ? 1 : -1 )
-        .map( transaction => ({
-          ...transaction, date: new Date(transaction.date).toISOString().split('T')[0]
-        }) )
+    const schedule = paymentSchedule( amount, rate, paymentsPerYear, totalPayments );
+    //... .sort, .map date format
+    
+    const totalInterest = 0; //... .reduce
 
-    const totalInterest = schedule.filter( t=> t.type === 'interest' )
-                                  .reduce((p, c)=> p + c.amount, 0);
-
-    const totalBalance = schedule.reduce((p, c)=> p + c.amount, 0);
+    const totalBalance = 0; //... .reduce
 
     this.setState({ transactions: schedule, totalInterest, totalBalance });
   }
